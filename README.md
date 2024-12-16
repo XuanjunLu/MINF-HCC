@@ -4,8 +4,6 @@ Nuclear features-based histological predictor of overall survival for resected h
 
 Nuclear segmentation: https://github.com/vqdang/hover_net
 
-![](README_md_files/31a1a140-bb62-11ef-978d-55edc5656f8c.jpeg?v=1&type=image)
-
 ## Abstract
 
 Background &Aims: Nuclear features have been demonstrated to correlate with prognosis in numerous cancers. However, their prognostic value in hepatocellular carcinoma (HCC) remains unclear. This study aimed to develop and validate a nuclear features-based histological predictor of overall survival (OS) for HCC patients after hepatectomy.
