@@ -185,7 +185,6 @@ def compute_eta(m):
     return e
 
 
-# 计算原始矩,计算并存储各阶矩（从 0 阶到 3 阶）的值到字典 m 中
 def compute_m(F):
     F = F * 1.0
     M, N = F.shape
@@ -210,7 +209,6 @@ def invmoments(F):
     phi = compute_phi(compute_eta(compute_m(F)))
     return phi
 
-# 计算边界点的分形维数
 def fractal_dim(xy):
     ## %fractal dimension
     ## %xy being the matrix containin x and y coordinates
@@ -245,30 +243,29 @@ def extract_morph_feats(bounds):
 
     feats = []
     for i in range(len(x)):
-        # if len(x[i]) < 3:
-        """核的边界坐标少于16的核扔掉"""
+        # if len(x[i]) < 3:         # minimum
         if len(x[i]) < 16:
             ## skip the useless nuclei
             continue
         xy = list(map(list, zip(x[i], y[i])))
         xy = xy[::-1]  ##reverse the list for extracting the centroid
-        # 得质心坐标，核面积
+        
         xc, yc, area = centroid(xy)
         # # Get the centroid and area
-        # 计算每个边界点到质心的欧氏距离
+      
         distance = np.linalg.norm(np.array(xy) - np.array([xc, yc]), axis=1)
         dist_min, dist_max = np.min(distance), np.max(distance)
         # #%==========================================================================
         # #%get maximum area and Area Ratio
-        # 计算最大距离作为半径的圆面积
+      
         max_area = np.pi * dist_max * dist_max
-        # 面积比
+     
         Area_Ratio = area / max_area
         # %==========================================================================
         # %Ratio between average distance and maximum distance
-        # 平均距离
+    
         dist_mean = np.mean(distance)
-        # 距离比
+   
         Dist_Ratio = dist_mean / dist_max
 
         # %==========================================================================
@@ -280,11 +277,11 @@ def extract_morph_feats(bounds):
 
         # %==========================================================================
         # %new distance ratio defined
-        # 对输入坐标点集进行不同间隔的抽样，计算长距离和短距离的总和，并返回它们的比率
+       
         dratio = distratio(xy)
         # # %==========================================================================
         # # %area to perimeter ratio
-        # 计算周长和周长面积比
+     
         paratio, peri = periarea(xy, area)
 
         # # %==========================================================================
@@ -303,7 +300,6 @@ def extract_morph_feats(bounds):
 
         # # %==========================================================================
         # # % Fourier Descriptors of boundary
-        # 取前10个傅里叶描述算子，如果边界点不足10，用0填充
         z = frdescp(xy)
 
         fd_pre = z[:10]
@@ -312,13 +308,12 @@ def extract_morph_feats(bounds):
         # # we would keep 10 Fourier features in fd. 
         # # So pad zeros for the nuclei with the number of boundary points < 10. 
         fd = np.zeros([10, ])
-        fd[:len(fd_pre)] = fd_pre          # len(fd)==10    得到10个特征量
+        fd[:len(fd_pre)] = fd_pre          # len(fd)==10    
         
         # # %============
         # # % Invariant moments
-        # 计算7个不变矩
         B = bound2im(xy)
-        phi = invmoments(B)             # len(phi)==7   得到7个特征量
+        phi = invmoments(B)             # len(phi)==7   
 
         # # %===========================
         # # % Get the fractal dimension
