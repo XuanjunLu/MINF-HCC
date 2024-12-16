@@ -1,0 +1,11 @@
+__pycache__/
+.DS_Store
+.idea/
+.git/
+*.pyc
+sample.py
+sample_poster.py
+*.json
+preloaded/
+venv/
+debug.py

@@ -1,0 +1,7 @@
+imagepaths,maskpaths
+../test_folder/image/1918911-HE_40_12000_39000.png,../test_folder/save_dir/mask/1918911-HE_40_12000_39000.png
+../test_folder/image/1918911-HE_40_29000_38000.png,../test_folder/save_dir/mask/1918911-HE_40_29000_38000.png
+../test_folder/image/1918911-HE_40_79000_23000.png,../test_folder/save_dir/mask/1918911-HE_40_79000_23000.png
+../test_folder/image/1918911-HE_40_43000_47000.png,../test_folder/save_dir/mask/1918911-HE_40_43000_47000.png
+../test_folder/image/1803456-7-HE_40_25000_49000.png,../test_folder/save_dir/mask/1803456-7-HE_40_25000_49000.png
+../test_folder/image/1656034-6-HE_40_37000_37000.png,../test_folder/save_dir/mask/1656034-6-HE_40_37000_37000.png
