@@ -49,7 +49,7 @@ data_matrix_test <- as.data.frame(data_matrix_test)
 
 
 ################################################################################
-# top 15 discriminative features
+# Model Fitting       top 15 discriminative features
 cox_model <- coxph(Surv(survival_time_train, event_status_train) ~  Shape_Standard_Deviation_LongorShort_Distance_Ratio_average +
                      Shape_Median_Perimeter_Ratio_median +
                      Shape_Min_or_Max_Standard_Deviation_of_Distance_median +
