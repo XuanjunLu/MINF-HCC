@@ -91,7 +91,7 @@ for (i in 1:100) {
                        data = data_matrix_filtered[, c('survival_time', 
                                                        'event_status', feature_name)])
   # both     backward      forward
-  step_model <- stepAIC(final_model, direction = "both", trace = 0) 
+  step_model <- stepAIC(final_model, direction = "forward", trace = 0) 
   
   # smallest AIC model
   current_aic <- AIC(step_model)
