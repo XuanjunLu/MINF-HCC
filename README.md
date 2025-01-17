@@ -29,5 +29,6 @@ Conclusions: MINF serves as an independent prognostic biomarker, providing auxi
 `$ python -m pip install -e .`
 
 ### run examples
+`$ cd example`
 
 `$ python example.py`
